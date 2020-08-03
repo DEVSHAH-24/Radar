@@ -4,6 +4,7 @@ import 'package:Radar/profile/view/MyRequestBar.dart';
 import 'package:Radar/profile/view/MyRequestDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:Radar/utils/ConnectionState.dart' as util;
 
 class ProfileScreen extends StatelessWidget {
@@ -13,10 +14,17 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 13,bottom: 13,left: 27),
+          child: Text('Profile',style: TextStyle(fontSize: 24),),
+        ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.person_outline),
+            padding: EdgeInsets.only(top: 16,right: 28,bottom: 12.09),
+            iconSize: 27,
+            icon: SvgPicture.asset(
+              'assets/logout.svg',color: Colors.white,
+            ),
             onPressed: null,
             color: Colors.white,
           )
